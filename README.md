@@ -16,6 +16,8 @@ A movie based review application. Discuss and review your favorite movies.
 
 ![Screenshot](https://repository-images.githubusercontent.com/141744474/1ce68080-769e-11ea-8f62-d743905db95e)
 
+---
+
 **_Technologies Used_**
 
 - Postgresql
@@ -25,6 +27,8 @@ A movie based review application. Discuss and review your favorite movies.
 - Heroku
 - React-Boostrap
 
+---
+
 **_Getting Started_**
 
 Click Heroku link above.
@@ -32,6 +36,8 @@ Click Heroku link above.
 ![ERD](ERD.png)
 
 ![CHD](CHD.png)
+
+---
 
 **_Task List_**
 
@@ -45,6 +51,8 @@ Click Heroku link above.
 - [ ] Integrate TMDB API
 - [ ] Data visual
 - [ ] Deploy on Heroku and debug
+
+---
 
 **_Credits_**
 
