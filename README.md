@@ -6,7 +6,7 @@
 
 #### By: Jin Yang, Ryan Craig, Brandon Hernandez
 
-[Git](https://github.com/jinyangb/Filmzilla)
+[Git](https://github.com/jinyangb/Filmzilla) | [Trello]()
 
 ---
 
@@ -32,22 +32,6 @@ Click Heroku link above.
 ![ERD](ERD.png)
 
 ![CHD](CHD.png)
-
-[Trello]()
-
-**_Screenshots_**
-
-#####
-
-![]()
-
-#####
-
-![]()
-
-#####
-
-![]()
 
 **_Task List_**
 
