@@ -1,6 +1,6 @@
 ![](FilmZilla.gif)
 
-# Filmzilla
+# FilmZilla
 
 ## Date: 9/20/2021
 
@@ -31,9 +31,7 @@ Click Heroku link above.
 
 ![ERD](ERD.png)
 
-[CHD](https://evening-hollows-49481.herokuapp.com/)
-
-[Filmzilla](https://evening-hollows-49481.herokuapp.com/)
+![CHD](CHD.png)
 
 [Trello]()
 
