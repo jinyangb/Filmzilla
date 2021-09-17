@@ -33,7 +33,11 @@ A movie based review application. Discuss and review your favorite movies.
 
 Click Heroku link above.
 
+#### ERD
+
 ![ERD](ERD.png)
+
+#### CHD
 
 ![CHD](CHD.png)
 
