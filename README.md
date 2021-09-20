@@ -35,11 +35,11 @@ Click Heroku link above.
 
 #### ERD
 
-![ERD](ERD.png)
+![ERD](images/ERD.png)
 
 #### CHD
 
-![CHD](CHD.png)
+![CHD](images/CHD.png)
 
 ---
 
