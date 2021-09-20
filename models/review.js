@@ -1,4 +1,5 @@
 'use strict'
+const { database } = require('faker')
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
@@ -19,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         references: {
           model: 'users',
+          id: 'id'
+        }
+      },
+      movieId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'movies',
           id: 'id'
         }
       }
