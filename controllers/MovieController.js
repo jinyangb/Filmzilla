@@ -1,4 +1,4 @@
-const { User, Reviews, Movies } = require('../models')
+const { User, Review, Movie } = require('../models')
 const { Op, literal, fn, col } = require('sequelize')
 
 const GetMovies = async (req, res) => {

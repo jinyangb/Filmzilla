@@ -1,4 +1,4 @@
-const { User, Reviews } = require('../models')
+const { User, Review } = require('../models')
 
 const GetProfiles = async (req, res) => {
   try {
@@ -12,7 +12,7 @@ const GetProfiles = async (req, res) => {
 const GetUserProfile = async (req, res) => {
   try {
     const userAndReviews = await User.findByPk(req.params.user_id, {
-      include: [{ model: Reviews, as: 'reviews' }]
+      include: [{ model: Review, as: 'reviews' }]
     })
     res.send(userAndReviews)
   } catch (error) {
