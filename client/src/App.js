@@ -7,8 +7,8 @@ import SignIn from './components/pages/SignIn';
 import MainNavigation from './components/layout/MainNavigation';
 
 function App() {
-  return (
-    <div>
+
+  return <div>
       <MainNavigation />
       <Switch>
         <Route path='/' exact>
@@ -28,7 +28,6 @@ function App() {
         </Route>
       </Switch>
     </div>
-  );
 }
 
 export default withRouter(App);
