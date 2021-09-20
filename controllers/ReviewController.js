@@ -1,4 +1,4 @@
-const { Post } = require('../models')
+const { Review } = require('../models')
 
 const GetReviews = async (req, res) => {
   try {
