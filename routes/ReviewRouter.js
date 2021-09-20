@@ -4,19 +4,19 @@ const middleware = require('../middleware')
 
 router.get('/', controller.GetReviews)
 router.post(
-  '/',
+  '/create-review',
   middleware.stripToken,
   middleware.verifyToken,
   controller.CreateReview
 )
 router.put(
-  '/:review_id',
+  '/update-review/:review_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.UpdateReview
 )
 router.delete(
-  '/:review_id',
+  '/delete-review/:review_id',
   middleware.stripToken,
   middleware.verifyToken,
   controller.DeleteReview
