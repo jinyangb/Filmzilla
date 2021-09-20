@@ -23,7 +23,7 @@ function ReviewList() {
       <div className='reviews'>
         <Container>
           <h2 className="rev_head">Reviews</h2>
-          {posts.map((result) => (
+          {reviews.map((result) => (
             <ReviewCard
               key={result._id}
               id={result._id}

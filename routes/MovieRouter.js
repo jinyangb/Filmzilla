@@ -3,12 +3,12 @@ const controller = require('../controllers/MovieController')
 const middleware = require('../middleware')
 
 router.get('/', controller.GetMovies)
-router.post(
-  '/',
-  middleware.stripToken,
-  middleware.verifyToken,
-  controller.CreateMovie
-)
+// router.post(
+//   '/',
+//   // middleware.stripToken,
+//   // middleware.verifyToken,
+//   controller.CreateMovie
+// )
 // router.put(
 //   '/:movie_id',
 //   middleware.stripToken,
