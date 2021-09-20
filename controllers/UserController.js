@@ -12,7 +12,7 @@ const GetProfiles = async (req, res) => {
 const GetUserProfile = async (req, res) => {
   try {
     const userAndReviews = await User.findByPk(req.params.user_id, {
-      include: [{ model: Review, as: 'reviews' }]
+      include: [{ model: Review }]
     })
     res.send(userAndReviews)
   } catch (error) {
