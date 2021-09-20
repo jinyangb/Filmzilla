@@ -7,7 +7,7 @@ function MainNavigation() {
     <header>
       <Navbar bg="light" expand="sm">
         <Navbar.Brand>FilmZilla</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
             <Nav.Link href="/">Home</Nav.Link>
@@ -23,4 +23,4 @@ function MainNavigation() {
   )
 }
 
-export default MainNavigation;
+export default MainNavigation
