@@ -1,8 +1,12 @@
-const { Review } = require('../models')
+const Review = require('../models/review')
 
+function stringify(data) {
+  console.log(JSON.stringify(data, null, 2))
+}
 const GetReviews = async (req, res) => {
   try {
     const reviews = await Review.findAll()
+    stringify(reviews)
     res.send(reviews)
   } catch (error) {
     throw error

@@ -1,5 +1,5 @@
 'use strict'
-const { database } = require('faker')
+
 const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Review extends Model {
