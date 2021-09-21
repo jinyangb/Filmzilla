@@ -9,10 +9,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Reviews.belongsTo(models.Users, {
+        as: 'user',
         foreignKey: 'userId'
       })
 
-      Reviews.hasOne(models.Movies, {
+      Reviews.belongsTo(models.Movies, {
+        as: 'movies',
         foreignKey: 'movieId'
       })
     }
