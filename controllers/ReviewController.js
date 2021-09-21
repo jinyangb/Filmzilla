@@ -1,11 +1,23 @@
-const { Reviews, sequelize } = require('../models')
+const { Reviews, Users, Movies, sequelize } = require('../models')
 
 function stringify(data) {
   console.log(JSON.stringify(data, null, 2))
 }
 const GetReviews = async (req, res) => {
   try {
-    const result = await Reviews.findAll()
+    const result = await Reviews.findAll({
+      include: [
+        {
+          model: Users,
+          as: 'user',
+          attributes: ['username']
+        },
+        {
+          model: Movies,
+          as: 'movies'
+        }
+      ]
+    })
     stringify(result)
     res.send(result)
   } catch (error) {
