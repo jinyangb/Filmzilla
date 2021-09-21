@@ -6,11 +6,11 @@ module.exports = {
       'movies',
       [
         {
-          title: faker.commerce.productName(),
-          overview: faker.lorem.paragraph(),
-          genre: faker.random.word(),
-          createdAt: new Date(),
-          updatedAt: new Date()
+          title: 'hello',
+          overview: 'I am',
+          genre: 'movie',
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ],
       {}
@@ -22,7 +22,7 @@ module.exports = {
      * Add commands to revert seed here.
      *
      * Example:
-     * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('movies')
   }
 }

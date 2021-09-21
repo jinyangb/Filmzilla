@@ -2,7 +2,7 @@ const app = require('express')()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-const AppRouter = require('./routes/AppRouter')
+// const AppRouter = require('./routes/AppRouter')
 const MovieRouter = require('./routes/MovieRouter')
 const ReviewRouter = require('./routes/ReviewRouter')
 const UserRouter = require('./routes/UserRouter')

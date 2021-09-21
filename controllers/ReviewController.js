@@ -6,7 +6,8 @@ function stringify(data) {
 const GetReviews = async (req, res) => {
   try {
     const reviews = await Review.findAll()
-    stringify(reviews)
+    console.log(reviews)
+    // stringify(reviews)
     res.send(reviews)
   } catch (error) {
     throw error

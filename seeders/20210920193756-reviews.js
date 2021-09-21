@@ -6,12 +6,12 @@ module.exports = {
       'reviews',
       [
         {
-          description: faker.lorem.words(),
-          rating: faker.datatype.number(),
-          userId: faker.datatype.number(),
-          movieId: faker.datatype.number(),
-          createdAt: new Date(),
-          updatedAt: new Date()
+          description: 'hsdkfhds',
+          rating: 5,
+          userId: 1,
+          movieId: 1,
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ],
       {}
@@ -23,7 +23,7 @@ module.exports = {
      * Add commands to revert seed here.
      *
      * Example:
-     * await queryInterface.bulkDelete('People', null, {});
      */
+    await queryInterface.bulkDelete('reviews')
   }
 }

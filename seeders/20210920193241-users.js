@@ -6,11 +6,11 @@ module.exports = {
       'users',
       [
         {
-          username: faker.name.title(),
-          password: faker.lorem.word(),
-          email: faker.internet.email(),
-          createdAt: new Date(),
-          updatedAt: new Date()
+          username: 'hello',
+          password: 'i am',
+          email: 'a@a.com',
+          created_at: new Date(),
+          updated_at: new Date()
         }
       ],
       {}
@@ -18,11 +18,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    await queryInterface.bulkDelete('users')
   }
 }
