@@ -30,5 +30,5 @@ const GetUserProfile = async (req, res) => {
 module.exports = {
   //   GetProfiles,
   GetUserProfile
-  //   CreateUser
+  // CreateUser
 }
