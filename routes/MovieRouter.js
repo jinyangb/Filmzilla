@@ -2,7 +2,8 @@ const router = require('express').Router()
 const controller = require('../controllers/MovieController')
 const middleware = require('../middleware')
 
-router.get('/', controller.GetMovies)
+router.get('/movies', controller.GetMovies)
+// router.get('/movies/:id', controller.GetMovieDetails)
 // router.post(
 //   '/',
 //   // middleware.stripToken,
