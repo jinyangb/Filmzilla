@@ -19,19 +19,6 @@ const GetUserProfile = async (req, res) => {
   }
 }
 
-// const GetUserProfile = async (req, res) => {
-//   try {
-//     let profile = req.params.id
-//     const result = await Users.findOne({
-//       where: {
-//         id: profile
-//       }
-//     })
-//     res.send(result)
-//   } catch (error) {
-//     throw error
-//   }
-// }
 const CreateUser = async (req, res) => {
   try {
     const newUser = await Users.create(req.body)
