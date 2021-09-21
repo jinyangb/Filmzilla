@@ -1,39 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import { BASE_URL } from './globals'
+import React, { useEffect } from 'react'
+// import axios from 'axios'
+import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import ReviewCard from './ReviewCard';
+import { LoadReviews } from '../store/actions/ReviewActions'
 
-function ReviewList() {
+const mapStateToProps = ({ reviewState }) => {
+  // console.log(reviewState.reviews)
+  return { reviewState }
+}
 
-  const [reviews, setReviews] = useState([])
-  const [request, changeIt] = useState(false)
-
-  const getPosts = async () => {
-    const res = await axios.get(`${BASE_URL}/reviews`)
-    setReviews(res.data)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchReviews: () => dispatch(LoadReviews())
   }
+}
+
+function ReviewList(props) {
+
+  // const [reviews, setReviews] = useState([])
+  // const [request, changeIt] = useState(false)
+
+  // const getPosts = async () => {
+  //   const res = await axios.get(`${BASE_URL}/reviews`)
+  //   setReviews(res.data)
+  // }
 
   useEffect(() => {
-    getPosts()
-  }, [request])
+    props.fetchReviews()
+  }, [])
 
   return (
     <div className='grid'>
       <div className='reviews'>
         <Container>
           <h2 className="rev_head">Reviews</h2>
-          {reviews.map((result) => (
+          {props.reviewState.reviews.map((review) => (
             <ReviewCard
-              key={result._id}
-              id={result._id}
-              movie={result.movieId}
-              user={result.userId}
-              rating={result.rating}
-              description={result.description}
-              request={request}
-              changeIt={changeIt}
-              del_path={'remove-review'}
+              key={review._id}
+              id={review._id}
+              rating={review.rating}
+              description={review.description}
+              // del_path={'remove-review'}
             />
           ))}
         </Container>
@@ -42,4 +50,4 @@ function ReviewList() {
   )
 }
 
-export default ReviewList;
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewList);
