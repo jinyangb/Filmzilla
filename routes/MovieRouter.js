@@ -11,13 +11,13 @@ router.post(
   controller.CreateMovie
 )
 
-router.get('/movies-details/:movie_id', controller.GetMovieDetails)
-router.put(
-  '/update-movie/:movie_id',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.UpdateMovie
-)
+// router.get('/movies-details/:movie_id', controller.GetMovieDetails)
+// router.put(
+//   '/update-movie/:movie_id',
+//   // middleware.stripToken,
+//   // middleware.verifyToken,
+//   controller.UpdateMovie
+// )
 router.delete(
   '/delete-movie/:movie_id',
   // middleware.stripToken,
