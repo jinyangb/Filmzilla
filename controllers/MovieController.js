@@ -1,23 +1,23 @@
-const { Movie } = require('../models/movie')
-const { Op, literal, fn, col } = require('sequelize')
+// const { Movie } = require('../models/movie')
+// const { Op, literal, fn, col } = require('sequelize')
 
-const GetMovies = async (req, res) => {
-  try {
-    const recents = await Movie.findAll({ order: [['created_at', 'DESC']] })
-    res.send(recents)
-  } catch (error) {
-    throw error
-  }
-}
+// const GetMovies = async (req, res) => {
+//   try {
+//     const recents = await Movie.findAll({ order: [['created_at', 'DESC']] })
+//     res.send(recents)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
-const GetMovieDetails = async (req, res) => {
-  try {
-    const movie = await Movie.findByPk(req.params.movie_id)
-    res.send(movie)
-  } catch (error) {
-    throw error
-  }
-}
+// const GetMovieDetails = async (req, res) => {
+//   try {
+//     const movie = await Movie.findByPk(req.params.movie_id)
+//     res.send(movie)
+//   } catch (error) {
+//     throw error
+//   }
+// }
 
 // const CreateMovie = async (req, res) => {
 //   try {
@@ -56,10 +56,10 @@ const GetMovieDetails = async (req, res) => {
 //   }
 // }
 
-module.exports = {
-  GetMovies,
-  GetMovieDetails
-  // CreateMovie,
-  // UpdateMovie,
-  // DeleteMovie
-}
+// module.exports = {
+//   GetMovies,
+//   GetMovieDetails
+//   // CreateMovie,
+//   // UpdateMovie,
+//   // DeleteMovie
+// }
