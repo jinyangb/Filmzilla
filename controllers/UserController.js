@@ -1,14 +1,14 @@
-const Users = require('../models')
+const { Users } = require('../models')
 // const Review = require('../models/review')
 
-// const GetProfiles = async (req, res) => {
-//   try {
-//     const users = await User.findAll()
-//     res.send(users)
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const GetProfiles = async (req, res) => {
+  try {
+    const users = await Users.findAll()
+    res.send(users)
+  } catch (error) {
+    throw error
+  }
+}
 
 const GetUserProfile = async (req, res) => {
   try {
@@ -18,17 +18,31 @@ const GetUserProfile = async (req, res) => {
     throw error
   }
 }
-// const CreateUser = async (req, res) => {
+
+// const GetUserProfile = async (req, res) => {
 //   try {
-//     const newUser = await User.create(req.body)
-//     res.send(newUser)
+//     let profile = req.params.id
+//     const result = await Users.findOne({
+//       where: {
+//         id: profile
+//       }
+//     })
+//     res.send(result)
 //   } catch (error) {
 //     throw error
 //   }
 // }
+const CreateUser = async (req, res) => {
+  try {
+    const newUser = await Users.create(req.body)
+    res.send(newUser)
+  } catch (error) {
+    throw error
+  }
+}
 
 module.exports = {
-  //   GetProfiles,
-  GetUserProfile
-  //   CreateUser
+  GetProfiles,
+  GetUserProfile,
+  CreateUser
 }
