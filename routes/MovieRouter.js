@@ -18,11 +18,12 @@ router.post(
 //   // middleware.verifyToken,
 //   controller.UpdateMovie
 // )
-router.delete(
-  '/delete-movie/:movie_id',
-  // middleware.stripToken,
-  // middleware.verifyToken,
-  controller.DeleteMovie
-)
+
+// router.delete(
+//   '/movies/:movie_id',
+//   middleware.stripToken,
+//   middleware.verifyToken,
+//   controller.DeleteMovie
+// )
 
 module.exports = router

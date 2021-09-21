@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import MovieCard from './MovieCard';
-import { LoadMovies } from '../store/actions/MovieActions'
+import { LoadMovies, RemoveMovie } from '../store/actions/MovieActions'
 
 const mapStateToProps = ({ movieState }) => {
   return { movieState }
@@ -10,7 +10,8 @@ const mapStateToProps = ({ movieState }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMovies: () => dispatch(LoadMovies())
+    fetchMovies: () => dispatch(LoadMovies()),
+    deleteMovie: () => dispatch(RemoveMovie())
   }
 }
 
@@ -22,15 +23,17 @@ function MovieList(props) {
 
   return (
     <div className='grid'>
-      <div className='reviews'>
+      <div className='movies'>
         <Container>
-          <h2 className="rev_head">Reviews</h2>
+          <h2 className="rev_head">Movies</h2>
           {props.movieState.movies.map((movie) => (
-            <ReviewCard
+            <MovieCard
               key={movie._id}
               id={movie._id}
-              rating={movie.rating}
-              description={movie.description}
+              name={movie.title}
+              overview={movie.overview}
+              genre={movie.genre}
+              deleteMovie={props.deleteMovie}
               // del_path={'remove-review'}
             />
           ))}
