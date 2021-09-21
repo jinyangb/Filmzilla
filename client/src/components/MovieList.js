@@ -22,15 +22,16 @@ function MovieList(props) {
 
   return (
     <div className='grid'>
-      <div className='reviews'>
+      <div className='movies'>
         <Container>
-          <h2 className="rev_head">Reviews</h2>
+          <h2 className="rev_head">Movies</h2>
           {props.movieState.movies.map((movie) => (
-            <ReviewCard
+            <MovieCard
               key={movie._id}
               id={movie._id}
-              rating={movie.rating}
-              description={movie.description}
+              name={movie.title}
+              overview={movie.overview}
+              genre={movie.genre}
               // del_path={'remove-review'}
             />
           ))}

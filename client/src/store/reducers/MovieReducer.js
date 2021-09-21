@@ -1,7 +1,7 @@
 const { GET_MOVIES } = require('../types')
 
 const iState = {
-  reviews: []
+  movies: []
 }
 
 const MovieReducer = (state = iState, action) => {
