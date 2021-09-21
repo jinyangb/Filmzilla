@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 function ReviewCard(props) {
-
   const deletePost = async (e) => {
     e.preventDefault()
     await axios.delete(`${BASE_URL}/${props.del_path}/${props.id}`)
@@ -18,7 +17,7 @@ function ReviewCard(props) {
         <p>Username: {props.user}</p>
         <p>Movie: {props.movie}</p>
         <p>Rating: {props.rating}</p>
-        <p>Review: {props.description}</p> 
+        <p>Review: {props.description}</p>
         <Button variant="danger" onClick={deletePost}>
           Delete
         </Button>
@@ -27,4 +26,4 @@ function ReviewCard(props) {
   )
 }
 
-export default ReviewCard;
+export default ReviewCard

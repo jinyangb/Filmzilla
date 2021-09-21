@@ -5,16 +5,9 @@ function stringify(data) {
 }
 const GetReviews = async (req, res) => {
   try {
-<<<<<<< HEAD
-    const reviews = await Review.findAll()
-    console.log(reviews)
-    // stringify(reviews)
-    res.send(reviews)
-=======
     const result = await Reviews.findAll()
     stringify(result)
     res.send(result)
->>>>>>> 501cf959a5570bc5d40463a9289e7eb0c06bf1d5
   } catch (error) {
     throw error
   }

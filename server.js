@@ -2,13 +2,8 @@ const app = require('express')()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-<<<<<<< HEAD
-// const AppRouter = require('./routes/AppRouter')
-const MovieRouter = require('./routes/MovieRouter')
-=======
 const AppRouter = require('./routes/AppRouter')
 // const MovieRouter = require('./routes/MovieRouter')
->>>>>>> 501cf959a5570bc5d40463a9289e7eb0c06bf1d5
 const ReviewRouter = require('./routes/ReviewRouter')
 // const UserRouter = require('./routes/UserRouter')
 

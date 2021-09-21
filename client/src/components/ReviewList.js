@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { BASE_URL } from './globals'
 import Container from 'react-bootstrap/Container'
-import ReviewCard from './ReviewCard';
+// import Modal from 'react-bootstrap/Modal'
+// import Button from 'react-bootstrap/Button'
+import ReviewCard from './ReviewCard'
 
 function ReviewList() {
-
   const [reviews, setReviews] = useState([])
   const [request, changeIt] = useState(false)
 
@@ -19,8 +20,8 @@ function ReviewList() {
   }, [request])
 
   return (
-    <div className='grid'>
-      <div className='reviews'>
+    <div className="grid">
+      <div className="reviews">
         <Container>
           <h2 className="rev_head">Reviews</h2>
           {reviews.map((result) => (
@@ -42,4 +43,4 @@ function ReviewList() {
   )
 }
 
-export default ReviewList;
+export default ReviewList
