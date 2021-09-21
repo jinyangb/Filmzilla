@@ -17,7 +17,7 @@ router.get('/movies', controller.GetMovies)
 //   controller.UpdateMovie
 // )
 // router.delete(
-//   '/:movie_id',
+//   '/movies/:movie_id',
 //   middleware.stripToken,
 //   middleware.verifyToken,
 //   controller.DeleteMovie

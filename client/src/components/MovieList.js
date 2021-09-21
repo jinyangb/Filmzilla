@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import MovieCard from './MovieCard';
-import { LoadMovies } from '../store/actions/MovieActions'
+import { LoadMovies, RemoveMovie } from '../store/actions/MovieActions'
 
 const mapStateToProps = ({ movieState }) => {
   return { movieState }
@@ -10,7 +10,8 @@ const mapStateToProps = ({ movieState }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMovies: () => dispatch(LoadMovies())
+    fetchMovies: () => dispatch(LoadMovies()),
+    deleteMovie: () => dispatch(RemoveMovie())
   }
 }
 
@@ -32,6 +33,7 @@ function MovieList(props) {
               name={movie.title}
               overview={movie.overview}
               genre={movie.genre}
+              deleteMovie={props.deleteMovie}
               // del_path={'remove-review'}
             />
           ))}
