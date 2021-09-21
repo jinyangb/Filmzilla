@@ -10,8 +10,8 @@ function ReviewList() {
   const [request, changeIt] = useState(false)
 
   const getPosts = async () => {
-    const res = await axios.get(`${BASE_URL}/`)
-    setReviews(res.data.reviews)
+    const res = await axios.get(`${BASE_URL}/reviews`)
+    setReviews(res.data)
   }
 
   useEffect(() => {

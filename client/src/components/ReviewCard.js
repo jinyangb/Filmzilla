@@ -15,10 +15,10 @@ function ReviewCard(props) {
   return (
     <Card>
       <Card.Body>
-        Username ${props.user}
-        Movie ${props.movie}
-        Rating ${props.rating}
-        Review ${props.description} 
+        <p>Username: {props.user}</p>
+        <p>Movie: {props.movie}</p>
+        <p>Rating: {props.rating}</p>
+        <p>Review: {props.description}</p> 
         <Button variant="danger" onClick={deletePost}>
           Delete
         </Button>
