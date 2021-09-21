@@ -1,4 +1,4 @@
-// const User = require('../models/user')
+const Users = require('../models')
 // const Review = require('../models/review')
 
 // const GetProfiles = async (req, res) => {
@@ -10,16 +10,14 @@
 //   }
 // }
 
-// const GetUserProfile = async (req, res) => {
-//   try {
-//     const userAndReviews = await User.findByPk(req.params.user_id, {
-//       include: [{ model: Review }]
-//     })
-//     res.send(userAndReviews)
-//   } catch (error) {
-//     throw error
-//   }
-// }
+const GetUserProfile = async (req, res) => {
+  try {
+    const userAndReviews = await Users.findByPk(req.params.user_id)
+    res.send(userAndReviews)
+  } catch (error) {
+    throw error
+  }
+}
 // const CreateUser = async (req, res) => {
 //   try {
 //     const newUser = await User.create(req.body)
@@ -29,8 +27,8 @@
 //   }
 // }
 
-// module.exports = {
-//   GetProfiles,
-//   GetUserProfile,
-//   CreateUser
-// }
+module.exports = {
+  //   GetProfiles,
+  GetUserProfile
+  //   CreateUser
+}
