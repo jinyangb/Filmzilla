@@ -1,5 +1,6 @@
 import React from 'react'
 import ReviewList from '../ReviewList';
+import MovieList from '../MovieList';
 
 function HomePage() {
 
@@ -7,6 +8,7 @@ function HomePage() {
     <div>
       Home Page
       <ReviewList />
+      <MovieList />
     </div>
   )
 }
