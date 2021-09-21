@@ -6,7 +6,6 @@ import ReviewCard from './ReviewCard'
 import { LoadReviews } from '../store/actions/ReviewActions'
 
 const mapStateToProps = ({ reviewState }) => {
-  // console.log(reviewState.reviews)
   return { reviewState }
 }
 
@@ -17,13 +16,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 function ReviewList(props) {
-  // const [reviews, setReviews] = useState([])
-  // const [request, changeIt] = useState(false)
 
-  // const getPosts = async () => {
-  //   const res = await axios.get(`${BASE_URL}/reviews`)
-  //   setReviews(res.data)
-  // }
 
   useEffect(() => {
     props.fetchReviews()
