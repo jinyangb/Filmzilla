@@ -10,6 +10,8 @@ router.post(
   // middleware.verifyToken,
   controller.CreateMovie
 )
+
+router.get('/movies-details/:movie_id', controller.GetMovieDetails)
 router.put(
   '/update-movie/:movie_id',
   // middleware.stripToken,
