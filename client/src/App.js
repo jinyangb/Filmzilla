@@ -11,7 +11,6 @@ import ProtectedRoute from './components/ProtectedRoute'
 import { CheckSession } from './services/Auth'
 
 function App() {
-
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -38,19 +37,33 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if(token){
+    if (token) {
       checkToken()
     }
   }, [])
 
   return (
     <div>
-      <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
+      <MainNavigation
+        authenticated={authenticated}
+        user={user}
+        handleLogOut={handleLogOut}
+      />
       <Switch>
         <Route path="/home" exact>
           <Home />
         </Route>
-        <Route exact path="/" component={(props) => <SignIn {...props} setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
+        <Route
+          exact
+          path="/"
+          component={(props) => (
+            <SignIn
+              {...props}
+              setUser={setUser}
+              toggleAuthenticated={toggleAuthenticated}
+            />
+          )}
+        />
         <Route path="/movies" exact>
           <Movies />
         </Route>
