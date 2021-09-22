@@ -30,7 +30,6 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    console.log(token)
     if(token){
       checkToken()
     }
@@ -38,16 +37,11 @@ function App() {
 
   return (
     <div>
-      <MainNavigation />
+      <MainNavigation authenticated={authenticated} user={user} />
       <Switch>
-        {user && authenticated && (
-          <ProtectedRoute
-            authenticated={authenticated}
-            user={user}
-            path='/home'
-            component={Home}
-          />
-        )}
+        <Route path="/home" exact>
+          <Home />
+        </Route>
         <Route exact path="/" component={(props) => <SignIn {...props} setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} />
         <Route path="/movies" exact>
           <Movies />
@@ -55,8 +49,7 @@ function App() {
         <Route path="/profile-page" exact>
           <ProfilePage />
         </Route>
-        <Route path="/register" component={Register} />
-        
+        <Route path="/api/auth/register" component={Register} />
       </Switch>
     </div>
   )

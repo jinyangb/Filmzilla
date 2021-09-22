@@ -17,13 +17,14 @@ export default function Register(props) {
   })
 
   const handleChange = (e) => {
+    console.log(e.target.name)
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
-      name: formValues.username,
+      username: formValues.username,
       email: formValues.email,
       password: formValues.password
     })
