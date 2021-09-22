@@ -22,10 +22,18 @@ function App() {
   //   localStorage.clear()
   // }
 
+  const handleLogOut = () => {
+    //Reset all auth related state and clear localstorage
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   const checkToken = async () => {
     const session = await CheckSession()
     setUser(session)
     toggleAuthenticated(true)
+    localStorage.setItem('authenticated', '1')
   }
 
   useEffect(() => {
@@ -37,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <MainNavigation authenticated={authenticated} user={user} />
+      <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
       <Switch>
         <Route path="/home" exact>
           <Home />
