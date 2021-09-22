@@ -8,7 +8,7 @@ module.exports = {
         {
           username: 'ChildishBrandino98',
           email: 'daemailofdacentury@gmail.com',
-          password_digest:
+          passwordDigest:
             'kdl3kes8djwdsafjds;fjapj398rj3pwjfpdsjfpoijapdj98vucx98uv9u8idjfpoa983908',
           createdAt: new Date(),
           updatedAt: new Date()
