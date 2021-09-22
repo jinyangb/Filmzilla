@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
 
 function App() {
-
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 

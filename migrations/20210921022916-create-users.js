@@ -21,10 +21,8 @@ module.exports = {
         }
       },
 
-
       passwordDigest: {
         type: Sequelize.STRING
-
       },
       createdAt: {
         allowNull: false,
