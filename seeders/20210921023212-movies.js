@@ -4,9 +4,9 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.bulkInsert('movies', [
       {
-        title: 'Lord of the rings',
-        overview: 'this movie is about swords and stuff',
-        genre: 'Action',
+        title: 'Baby Driver',
+        overview: 'this movie is about babies driving and stuff',
+        genre: 'Thriller',
         createdAt: new Date(),
         updatedAt: new Date()
       }
