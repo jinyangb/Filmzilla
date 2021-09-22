@@ -36,7 +36,7 @@ function MyVerticallyCenteredModal(props) {
               Password
             </Form.Label>
             <Col sm={10}>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control type="input" placeholder="Password" />
             </Col>
           </Form.Group>
           <fieldset>
