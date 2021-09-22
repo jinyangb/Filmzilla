@@ -20,17 +20,9 @@ module.exports = {
           isEmail: true
         }
       },
-<<<<<<< HEAD
-      passwordDigest: {
-        type: Sequelize.STRING,
-        allowNull: false
-=======
-
 
       passwordDigest: {
         type: Sequelize.STRING
-
->>>>>>> 06099d5d58f732ef393c846564344228d625a497
       },
       createdAt: {
         allowNull: false,
