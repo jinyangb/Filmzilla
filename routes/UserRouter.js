@@ -1,10 +1,11 @@
 const Router = require('express').Router()
 
 const controller = require('../controllers/AuthController')
-const middleware = require('../middleware')
+const cont = require('../controllers/UserController')
+// const middleware = require('../middleware')
 
 // Router.get('/', controller.GetProfiles)
-// Router.get('/myprofile/:user_id', controller.GetUserProfile)
+Router.get('/myprofile/:user_id', cont.GetUserProfile)
 // Router.post('/', controller.CreateUser)
 Router.post('/auth/login', controller.Login)
 Router.post('/auth/register', controller.Register)
