@@ -29,7 +29,7 @@ export default function Register(props) {
       password: formValues.password
     })
     setFormValues(iState)
-    props.history.push('/signin')
+    props.history.push('/')
   }
 
   return (
