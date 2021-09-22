@@ -4,10 +4,8 @@ import Home from './components/pages/Home'
 import Movies from './components/pages/Movies'
 import ProfilePage from './components/pages/ProfilePage'
 import Register from './components/pages/Register'
-import SignIn from './components/pages/SignIn'
 import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ProtectedRoute from './components/ProtectedRoute'
 import { CheckSession } from './services/Auth'
 
 function App() {
@@ -40,9 +38,6 @@ function App() {
       <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
       <Switch>
         <Route exact path="/" component={(props) => <Home {...props} setUser={setUser} toggleAuthenticated={toggleAuthenticated} authenticated={authenticated}/>} />
-          {/* <Home /> */}
-        {/* </Route> */}
-        {/* <Route exact path="/" component={(props) => <SignIn {...props} setUser={setUser} toggleAuthenticated={toggleAuthenticated}/>} /> */}
         <Route path="/movies" exact>
           <Movies />
         </Route>
