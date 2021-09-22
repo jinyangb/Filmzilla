@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { RegisterUser } from '../../services/Auth'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 
 const iState = {
   username: '',
@@ -17,7 +20,6 @@ export default function Register(props) {
   })
 
   const handleChange = (e) => {
-    console.log(e.target.name)
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
@@ -35,60 +37,35 @@ export default function Register(props) {
   return (
     <div className="signin col">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="name">Username</label>
-            <input
-              onChange={handleChange}
-              name="username"
-              type="text"
-              placeholder="John Smith"
-              value={formValues.username}
-              required
-            />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={handleChange}
-              name="email"
-              type="email"
-              placeholder="example@example.com"
-              value={formValues.email}
-              required
-            />
-          </div>
-
-          <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              value={formValues.password}
-              required
-            />
-          </div>
-          <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="confirmPassword"
-              value={formValues.confirmPassword}
-              required
-            />
-          </div>
-          <button
-            disabled={
-              !formValues.email ||
-              (!formValues.password &&
-                formValues.confirmPassword === formValues.password)
-            }
-          >
-            Sign In
-          </button>
-        </form>
+        <Container>
+          <Form className="col" onSubmit={handleSubmit}>
+            <div className="input-wrapper">
+              <Form.Group className="mb-3">
+                <Form.Label>Username</Form.Label>
+                <Form.Control onChange={handleChange} name="username" type="text" placeholder="John Smith" value={formValues.username} required/>
+              </Form.Group>
+            </div>
+            <div className="input-wrapper">
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control onChange={handleChange} name="email" type="email" placeholder="example@example.com" value={formValues.email} required/>
+              </Form.Group>
+            </div>
+            <div className="input-wrapper">
+              <Form.Group className="mb-3">
+                <Form.Label>Password</Form.Label>
+                <Form.Control onChange={handleChange} type="password" name="password" value={formValues.password} required/>
+              </Form.Group>
+            </div>
+            <div className="input-wrapper">
+              <Form.Group className="mb-3">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control onChange={handleChange} type="password" name="confirmPassword" value={formValues.confirmPassword} required/>
+              </Form.Group>
+            </div>
+            <Button type="submit" disabled={!formValues.email || (!formValues.password && formValues.confirmPassword === formValues.password)}>Sign In</Button>
+          </Form>
+        </Container>
       </div>
     </div>
   )
