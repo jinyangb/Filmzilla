@@ -33,7 +33,7 @@ function MovieList(props) {
               name={movie.title}
               overview={movie.overview}
               genre={movie.genre}
-              deleteMovie={props.deleteMovie}
+              // deleteMovie={props.deleteMovie}
               // del_path={'remove-review'}
             />
           ))}
