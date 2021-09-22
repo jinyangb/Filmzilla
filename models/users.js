@@ -9,16 +9,23 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Users.hasMany(models.Reviews, {
-        as: 'user',
+        as: 'reviews',
         foreignKey: 'userId'
       })
     }
   }
   Users.init(
     {
-      username: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password_digest: DataTypes.STRING
+      username: { type: DataTypes.STRING, allowNull: false },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      passwordDigest: { type: DataTypes.STRING, allowNull: false }
     },
     {
       sequelize,
