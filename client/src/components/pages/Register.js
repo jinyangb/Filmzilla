@@ -63,7 +63,7 @@ export default function Register(props) {
                 <Form.Control onChange={handleChange} type="password" name="confirmPassword" value={formValues.confirmPassword} required/>
               </Form.Group>
             </div>
-            <Button type="submit" disabled={!formValues.email || (!formValues.password && formValues.confirmPassword === formValues.password)}>Sign In</Button>
+            <Button type="submit" disabled={!formValues.email || (!formValues.password || formValues.confirmPassword !== formValues.password)}>Register</Button>
           </Form>
         </Container>
       </div>
