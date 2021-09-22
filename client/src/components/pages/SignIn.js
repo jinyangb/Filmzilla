@@ -14,7 +14,7 @@ export default function SignIn(props) {
     setFormValues({ username: '',password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    props.history.push('/feed')
+    props.history.push('/home')
   }
 
   return (
@@ -22,7 +22,7 @@ export default function SignIn(props) {
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="email">Username</label>
+            <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
               name="username"
