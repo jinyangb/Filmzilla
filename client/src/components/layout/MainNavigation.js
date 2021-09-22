@@ -10,7 +10,7 @@ function MainNavigation(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
           <Nav>
-            {props.authenticated ? <Nav.Link href="/home">Home</Nav.Link> : <Nav.Link href="/">Sign In</Nav.Link>} 
+            {props.authenticated ? <Nav.Link href="/">Home</Nav.Link> : <Nav.Link href="/">Sign In</Nav.Link>} 
             {props.authenticated ? <Nav.Link href="/movies">Movies</Nav.Link> : <Nav.Link href="/api/auth/register">Register</Nav.Link>}
             {props.authenticated ? <Nav.Link href="/profile-page">Profile Page</Nav.Link> : null}
             {props.authenticated ? <Nav.Link onClick={props.handleLogOut} href="/">Logout</Nav.Link> : null}
