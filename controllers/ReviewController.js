@@ -14,7 +14,8 @@ const GetReviews = async (req, res) => {
         },
         {
           model: Movies,
-          as: 'movies'
+          as: 'movies',
+          attributes: ['title']
         }
       ]
     })
