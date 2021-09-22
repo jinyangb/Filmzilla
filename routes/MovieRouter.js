@@ -3,19 +3,22 @@ const controller = require('../controllers/MovieController')
 const middleware = require('../middleware')
 
 router.get('/movies', controller.GetMovies)
-// router.get('/movies/:id', controller.GetMovieDetails)
-// router.post(
-//   '/',
+// router.get('/movie-details/:id', controller.GetMovieDetails)
+router.post(
+  '/create-movie',
+  // middleware.stripToken,
+  // middleware.verifyToken,
+  controller.CreateMovie
+)
+
+// router.get('/movies-details/:movie_id', controller.GetMovieDetails)
+// router.put(
+//   '/update-movie/:movie_id',
 //   // middleware.stripToken,
 //   // middleware.verifyToken,
-//   controller.CreateMovie
-// )
-// router.put(
-//   '/:movie_id',
-//   middleware.stripToken,
-//   middleware.verifyToken,
 //   controller.UpdateMovie
 // )
+
 // router.delete(
 //   '/movies/:movie_id',
 //   middleware.stripToken,
