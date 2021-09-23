@@ -35,38 +35,31 @@ export default function Register(props) {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
-        <Container>
-          <Form className="col" onSubmit={handleSubmit}>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Username</Form.Label>
-                <Form.Control onChange={handleChange} name="username" type="text" placeholder="John Smith" value={formValues.username} required/>
-              </Form.Group>
-            </div>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Email</Form.Label>
-                <Form.Control onChange={handleChange} name="email" type="email" placeholder="example@example.com" value={formValues.email} required/>
-              </Form.Group>
-            </div>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
-                <Form.Control onChange={handleChange} type="password" name="password" value={formValues.password} required/>
-              </Form.Group>
-            </div>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Confirm Password</Form.Label>
-                <Form.Control onChange={handleChange} type="password" name="confirmPassword" value={formValues.confirmPassword} required/>
-              </Form.Group>
-            </div>
-            <Button type="submit" disabled={!formValues.email || (!formValues.password || formValues.confirmPassword !== formValues.password)}>Register</Button>
-          </Form>
-        </Container>
-      </div>
+    <div className="register-sect">
+      <Container>
+        <h1>CREATE AN ACCOUNT</h1>
+      </Container>
+      <Container>
+        <Form className="register-form" onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Username</Form.Label>
+            <Form.Control onChange={handleChange} name="username" type="text" placeholder="John Smith" value={formValues.username} required/>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Email</Form.Label>
+            <Form.Control onChange={handleChange} name="email" type="email" placeholder="example@example.com" value={formValues.email} required/>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Password</Form.Label>
+            <Form.Control onChange={handleChange} type="password" name="password" value={formValues.password} required/>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control onChange={handleChange} type="password" name="confirmPassword" value={formValues.confirmPassword} required/>
+          </Form.Group>
+          <Button type="submit" disabled={!formValues.email || (!formValues.password || formValues.confirmPassword !== formValues.password)}>Register</Button>
+        </Form>
+      </Container>
     </div>
   )
 }
