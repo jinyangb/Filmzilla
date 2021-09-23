@@ -42,7 +42,7 @@ function App(props) {
           <Movies />
         </Route>
         <Route path="/profile-page" exact>
-          <ProfilePage user={user ? user : ''}/>
+          <ProfilePage user={user ? user : ''} setUser={setUser}/>
         </Route>
         <Route path="/api/auth/register" component={Register} />
       </Switch>
