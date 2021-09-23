@@ -7,7 +7,6 @@ import Register from './components/pages/Register'
 import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
-import {Redirect} from 'react-router-dom';
 
 function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -43,7 +42,7 @@ function App(props) {
           <Movies />
         </Route>
         <Route path="/profile-page" exact>
-          <ProfilePage />
+          <ProfilePage user={user ? user : ''}/>
         </Route>
         <Route path="/api/auth/register" component={Register} />
       </Switch>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProfilePage() {
+function ProfilePage(props) {
 
   return (
     <div>
