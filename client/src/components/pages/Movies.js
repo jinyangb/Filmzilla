@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from '../MovieCard'
 import Search from '../Search'
+import Card from 'react-bootstrap/Card'
 
 export default function Movie(props) {
   const [movies, setMovies] = useState([])
