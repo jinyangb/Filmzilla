@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from '../MovieCard'
 import Search from '../Search'
+<<<<<<< HEAD
 import Card from 'react-bootstrap/Card'
+=======
+import { Container } from 'react-bootstrap'
+>>>>>>> 7d9c1ca149287e2eb8ad3bc9f5e90deb6792407a
 
 export default function Movie(props) {
   const [movies, setMovies] = useState([])
@@ -48,12 +52,14 @@ export default function Movie(props) {
         <section>
           {searchResults.length > 0}
           {searchResults.map((searchResult) => (
-            <MovieCard
-              key={searchResult.id}
-              {...searchResult}
-              name={searchResult.title}
-              overview={searchResult.overview}
-            />
+            <Container>
+              <MovieCard
+                key={searchResult.id}
+                {...searchResult}
+                name={searchResult.title}
+                overview={searchResult.overview}
+              />
+            </Container>
           ))}
         </section>
       </div>
@@ -62,12 +68,14 @@ export default function Movie(props) {
         <h2>Movies</h2>
         <section>
           {movies.map((movie) => (
-            <MovieCard
-              name={movie.title}
-              backdrop_path={movie.poster_path}
-              overview={movie.overview}
-              // genre={movie.genre}
-            />
+            <Container>
+              <MovieCard
+                name={movie.title}
+                backdrop_path={movie.poster_path}
+                overview={movie.overview}
+                // genre={movie.genre}
+              />
+            </Container>
           ))}
         </section>
       </div>
