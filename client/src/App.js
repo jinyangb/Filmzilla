@@ -27,22 +27,41 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if(token){
+    if (token) {
       checkToken()
     }
   }, [])
-
+  console.log(user)
   return (
     <div>
-      <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
+      <MainNavigation
+        authenticated={authenticated}
+        user={user}
+        handleLogOut={handleLogOut}
+      />
       <Switch>
-        <Route exact path="/" component={(props) => <Home {...props} setUser={setUser} user={user ? user : ''} toggleAuthenticated={toggleAuthenticated} authenticated={authenticated}/>} />
+        <Route
+          exact
+          path="/"
+          component={(props) => (
+            <Home
+              {...props}
+              setUser={setUser}
+              user={user ? user : ''}
+              toggleAuthenticated={toggleAuthenticated}
+              authenticated={authenticated}
+            />
+          )}
+        />
         <Route path="/movies" exact>
           <Movies />
         </Route>
-        <Route path="/profile-page" exact>
-          <ProfilePage />
-        </Route>
+        <Route
+          exact
+          path="/profile-page"
+          component={(props) => <ProfilePage setUser={setUser} user={user} />}
+        />
+
         <Route path="/api/auth/register" component={Register} />
       </Switch>
     </div>
