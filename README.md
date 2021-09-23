@@ -1,4 +1,4 @@
-![](FilmZilla.gif)
+![FilmZilla](/images/FilmZilla.gif)
 
 # FilmZilla
 
