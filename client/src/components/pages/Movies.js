@@ -1,9 +1,4 @@
-import {
-  axiosConfig,
-  BASE_URL_MOVIE,
-  API_KEY,
-  POSTER_PATH
-} from '../../globals'
+import { BASE_URL_MOVIE } from '../../globals'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from '../MovieCard'
@@ -15,15 +10,21 @@ export default function Movie(props) {
   const [searched, toggleSearched] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
-  const getSearchResults = async (e) => {
-    e.preventDefault()
+  const getMovies = async () => {
     const res = await axios.get(
       `${BASE_URL_MOVIE}/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
-    console.log(res)
+    setMovies(res.data.results)
+  }
+
+  const getSearchResults = async (e) => {
+    e.preventDefault()
+    const res = await axios.get(
+      `${BASE_URL_MOVIE}/search/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&query=${searchQuery}`
+    )
     setSearchResults(res.data.results)
-    setSearchQuery('')
     toggleSearched(searched === true)
+    setSearchQuery('')
   }
 
   const handleChange = (event) => {
@@ -31,25 +32,27 @@ export default function Movie(props) {
   }
 
   useEffect(() => {
-    async function getMovies() {
-      const res = await axios.get(
-        `${BASE_URL_MOVIE}/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}`
-      )
-
-      setMovies(res.data.results)
-    }
     getMovies()
   }, [])
 
   return (
     <div>
-      <Search onChange={handleChange} onSubmit={getSearchResults} />
+      <Search
+        onChange={handleChange}
+        onSubmit={getSearchResults}
+        value={searchQuery}
+      />
       <div>
-        <h2>Search Results</h2>
+        {/* <h2>Search Results</h2> */}
         <section>
           {searchResults.length > 0}
           {searchResults.map((searchResult) => (
-            <MovieCard key={searchResult.id} {...searchResult} />
+            <MovieCard
+              key={searchResult.id}
+              {...searchResult}
+              name={searchResult.title}
+              overview={searchResult.overview}
+            />
           ))}
         </section>
       </div>
@@ -62,7 +65,7 @@ export default function Movie(props) {
               name={movie.title}
               backdrop_path={movie.poster_path}
               overview={movie.overview}
-              genre={movie.genre}
+              // genre={movie.genre}
             />
           ))}
         </section>
