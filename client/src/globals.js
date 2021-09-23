@@ -12,5 +12,4 @@ export const axiosConfig = {
 export const BASE_URL_MOVIE = 'https://api.themoviedb.org/3'
 
 export const POSTER_PATH = 'https://image.tmdb.org/t/p/w500/'
-console.log(process.env.REACT_APP_TMDB_KEY)
 export const API_KEY = process.env.REACT_APP_TMDB_KEY
