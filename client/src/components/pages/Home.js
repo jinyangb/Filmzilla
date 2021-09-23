@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container'
 import SignIn from './SignIn'
 import MyVerticallyCenteredModal from '../modal'
 import { Button } from 'react-bootstrap'
+import ModalGen from '../ModalGen';
 
 function HomePage(props) {
   
