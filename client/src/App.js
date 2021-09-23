@@ -7,9 +7,8 @@ import Register from './components/pages/Register'
 import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
-import {Redirect} from 'react-router-dom';
 
-function App(props) {
+function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -17,7 +16,6 @@ function App(props) {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
-    props.history.push(`/`)
   }
 
   const checkToken = async () => {
@@ -33,7 +31,7 @@ function App(props) {
       checkToken()
     }
   }, [])
-  console.log(user)
+
   return (
     <div>
       <MainNavigation
@@ -58,12 +56,9 @@ function App(props) {
         <Route path="/movies" exact>
           <Movies />
         </Route>
-        <Route
-          exact
-          path="/profile-page"
-          component={(props) => <ProfilePage setUser={setUser} user={user} />}
-        />
-
+        <Route path="/profile-page" exact>
+          <ProfilePage user={user ? user : ''} setUser={setUser} />
+        </Route>
         <Route path="/api/auth/register" component={Register} />
       </Switch>
     </div>
