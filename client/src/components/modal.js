@@ -1,6 +1,6 @@
 import { Modal, Button, Form, Row, Col, FloatingLable } from 'react-bootstrap'
 import { React, useState } from 'react'
-import { BASE_URL } from './globals'
+import { BASE_URL } from '../globals'
 import axios from 'axios'
 function MyVerticallyCenteredModal(props) {
   const [newReview, setNewReview] = useState({

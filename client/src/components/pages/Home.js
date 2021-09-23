@@ -11,7 +11,8 @@ function HomePage(props) {
     <div>
       {props.authenticated ? <ReviewList /> : <SignIn {...props} history={props.history} setUser={props.setUser} toggleAuthenticated={props.toggleAuthenticated} authenticated={props.authenticated}/>} 
       {props.authenticated ? <MovieList /> : null}
-      {props.authenticated ? <Button variant="primary" onClick={() => setModalShow(true)}>Create Review</Button> <MyVerticallyCenteredModalshow={modalShow} onHide={() => setModalShow(false)} /> : null}
+      {props.authenticated ? <Button variant="primary" onClick={() => setModalShow(true)}>Create Review</Button> : null}
+      <MyVerticallyCenteredModal user={props.user.username} show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   )
 }
