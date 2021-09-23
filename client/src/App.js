@@ -7,7 +7,6 @@ import Register from './components/pages/Register'
 import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
-import {Redirect} from 'react-router-dom';
 
 function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
