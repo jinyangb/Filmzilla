@@ -1,17 +1,33 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
+import { Card, Row, Col, Container } from 'react-bootstrap'
 import { POSTER_PATH } from '../globals'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function MovieCard(props) {
   return (
-    <Card>
-      <Card.Body>
-        <p>Movie: {props.name}</p>
-        <img src={`${POSTER_PATH}${props.backdrop_path}`} alt="poster" />
-        <p>Overview: {props.overview}</p>
-        {/* <p>Genre: {props.genre}</p> */}
-      </Card.Body>
-    </Card>
+    <Container className="Moviecard" className="d-block w-50">
+      <br />
+      <Row xs={1} md={2} className="g-4">
+        {Array.from({ length: 2 }).map((_, idx) => (
+          <Col>
+            <Card>
+              <Card.Img
+                variant="top"
+                src="holder.js/100px160"
+                src={`${POSTER_PATH}${props.backdrop_path}`}
+                alt="Poster"
+              />
+              <Card.Body>
+                <h2>{props.name}</h2>
+                <Card.Text>
+                  <p>{props.overview}</p>
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   )
 }
 

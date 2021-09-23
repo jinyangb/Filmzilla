@@ -61,7 +61,7 @@ export default function Movie(props) {
       </div>
 
       <div>
-        <h2>Movies</h2>
+        {/* <h2>Movies</h2> */}
         <section>
           {movies.map((movie) => (
             <Container>
