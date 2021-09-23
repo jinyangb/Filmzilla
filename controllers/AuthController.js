@@ -3,7 +3,6 @@ const middleware = require('../middleware')
 
 const Login = async (req, res) => {
   try {
-    console.log(req.body.username)
     const user = await Users.findOne({
       where: { username: req.body.username },
       raw: true
@@ -13,7 +12,6 @@ const Login = async (req, res) => {
         id: user.id,
         username: user.username
       }
-      console.log(payload)
       let token = middleware.createToken(payload)
       return res.send({ user: payload, token })
     }
@@ -25,10 +23,8 @@ const Login = async (req, res) => {
 const Register = async (req, res) => {
   try {
     const { username, email, password } = req.body
-    console.log(req.body)
     let passwordDigest = await middleware.hashPassword(password)
     const user = await Users.create({ username, email, passwordDigest })
-    console.log(user)
     res.send(user)
   } catch (error) {
     throw error
@@ -56,7 +52,6 @@ const UpdatePassword = async (req, res) => {
 
 const CheckSession = async (req, res) => {
   const { payload } = res.locals
-  console.log('payload', payload)
   res.send(payload)
 }
 

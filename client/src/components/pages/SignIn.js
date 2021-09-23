@@ -6,7 +6,6 @@ import Container from 'react-bootstrap/Container'
 
 export default function SignIn(props) {
   const [formValues, setFormValues] = useState({ username: '', password: '' })
-
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
@@ -17,7 +16,7 @@ export default function SignIn(props) {
     setFormValues({ username: '',password: '' })
     props.setUser(payload)
     props.toggleAuthenticated(true)
-    props.history.push('/home')
+    props.history.push('/')
   }
 
   return (

@@ -24,7 +24,6 @@ function MyVerticallyCenteredModal(props) {
   const handleChangeRating = (event) => {
     setNewReview({ ...newReview, rating: event.target.value })
   }
-  console.log(newReview)
   return (
     <Modal
       {...props}
