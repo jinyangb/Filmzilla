@@ -8,7 +8,7 @@ import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
 
-function App(props) {
+function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -16,7 +16,6 @@ function App(props) {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
-    props.history.push(`/`)
   }
 
   const checkToken = async () => {
@@ -28,22 +27,38 @@ function App(props) {
 
   useEffect(() => {
     const token = localStorage.getItem('token')
-    if(token){
+    if (token) {
       checkToken()
     }
   }, [])
 
   return (
     <div>
-      <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
+      <MainNavigation
+        authenticated={authenticated}
+        user={user}
+        handleLogOut={handleLogOut}
+      />
       <Switch>
-        <Route exact path="/" component={(props) => <Home {...props} setUser={setUser} user={user ? user : ''} toggleAuthenticated={toggleAuthenticated} authenticated={authenticated}/>} />
+        <Route
+          exact
+          path="/"
+          component={(props) => (
+            <Home
+              {...props}
+              setUser={setUser}
+              user={user ? user : ''}
+              toggleAuthenticated={toggleAuthenticated}
+              authenticated={authenticated}
+            />
+          )}
+        />
         <Route path="/movies" exact>
           <Movies />
         </Route>
-        <Route path="/profile-page" exact>
-          <ProfilePage user={user ? user : ''} setUser={setUser}/>
-        </Route>
+        {/* <Route path="/profile-page" exact>
+          <ProfilePage user={user ? user : ''} setUser={setUser} /> */}
+        {/* </Route> */}
         <Route path="/api/auth/register" component={Register} />
       </Switch>
     </div>
