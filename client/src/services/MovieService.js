@@ -12,7 +12,6 @@ export const GetMovies = async () => {
 export const DelMovie = async () => {
   try {
     await Client.delete('/movies/:movie_id')
-    console.log('test')
   } catch (error) {
     throw error
   }

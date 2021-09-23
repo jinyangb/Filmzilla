@@ -4,7 +4,7 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 function MyVerticallyCenteredModal(props) {
   const [newReview, setNewReview] = useState({
-    username: '',
+    user: '',
     title: '',
     description: '',
     rating: null
@@ -23,6 +23,10 @@ function MyVerticallyCenteredModal(props) {
 
   const handleChangeRating = (event) => {
     setNewReview({ ...newReview, rating: event.target.value })
+  }
+
+  const handleChangeUser = (props) => {
+    setNewReview({ ...newReview, user: `${props.user}` })
   }
   console.log(newReview)
   return (
@@ -46,7 +50,12 @@ function MyVerticallyCenteredModal(props) {
               Signed in as:
             </Form.Label>
             <Col sm="10">
-              <Form.Control plaintext readOnly Value={props.user} />
+              <Form.Control
+                plaintext
+                readOnly
+                value={props.user}
+                onChange={handleChangeUser}
+              />
             </Col>
           </Form.Group>
           <br />
