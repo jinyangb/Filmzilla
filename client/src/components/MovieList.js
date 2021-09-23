@@ -1,40 +1,35 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import { BASE_URL } from '../globals'
 import Container from 'react-bootstrap/Container'
 import MovieCard from './MovieCard';
-import { LoadMovies, RemoveMovie } from '../store/actions/MovieActions'
 
-const mapStateToProps = ({ movieState }) => {
-  return { movieState }
-}
+function MovieList() {
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchMovies: () => dispatch(LoadMovies()),
-    deleteMovie: () => dispatch(RemoveMovie())
+  const [movies, setMovies] = useState([])
+  const [request, changeIt] = useState(false)
+
+  const getMovies = async () => {
+    const res = await axios.get(`${BASE_URL}/movies`)
+    setMovies(res.data)
   }
-}
-
-function MovieList(props) {
 
   useEffect(() => {
-    props.fetchMovies()
-  }, [])
+    getMovies()
+  }, [request])
 
   return (
     <div className='grid'>
       <div className='movies'>
         <Container>
           <h2 className="rev_head">Movies</h2>
-          {props.movieState.movies.map(movie => (
+          {movies.map(movie => (
             <MovieCard
-              key={movie._id}
-              id={movie._id}
+              key={movie.id}
+              id={movie.id}
               name={movie.title}
               overview={movie.overview}
               genre={movie.genre}
-              // deleteMovie={props.deleteMovie}
-              // del_path={'remove-review'}
             />
           ))}
         </Container>
@@ -43,4 +38,4 @@ function MovieList(props) {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
+export default MovieList;

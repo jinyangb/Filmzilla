@@ -1,39 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { connect } from 'react-redux'
+import { BASE_URL } from '../globals'
 import Container from 'react-bootstrap/Container'
 import ReviewCard from './ReviewCard'
-import { LoadReviews } from '../store/actions/ReviewActions'
 
-const mapStateToProps = ({ reviewState }) => {
-  return { reviewState }
-}
+function ReviewList() {
+  const [reviews, setReviews] = useState([])
+  const [request, changeIt] = useState(false)
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchReviews: () => dispatch(LoadReviews())
+  const getReviews = async () => {
+    const res = await axios.get(`${BASE_URL}/reviews`)
+    setReviews(res.data)
   }
-}
-
-function ReviewList(props) {
-
 
   useEffect(() => {
-    props.fetchReviews()
-  }, [])
+    getReviews()
+  }, [request])
 
   return (
     <div className="grid">
       <div className="reviews">
         <Container>
           <h2 className="rev_head">Reviews</h2>
-          {props.reviewState.reviews.map((review) => (
+          {reviews.map((review) => (
             <ReviewCard
-              key={review._id}
-              id={review._id}
+              key={review.id}
+              id={review.id}
               rating={review.rating}
               description={review.description}
-              // del_path={'remove-review'}
+              request={request}
+              changeIt={changeIt}
+              del_path={'delete-review'}
             />
           ))}
         </Container>
@@ -42,4 +39,4 @@ function ReviewList(props) {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewList)
+export default ReviewList;
