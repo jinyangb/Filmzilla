@@ -32,6 +32,7 @@ export default function Register(props) {
     })
     setFormValues(iState)
     props.history.push('/')
+    alert('Account has been created! Sign in to proceed!')
   }
 
   return (

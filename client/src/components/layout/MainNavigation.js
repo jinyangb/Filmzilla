@@ -19,7 +19,7 @@ function MainNavigation(props) {
             {props.authenticated ? <Nav.Link href="/movies">Movies</Nav.Link> : <Nav.Link href="/api/auth/register">Register</Nav.Link>}
             {props.authenticated ? <Nav.Link href="/profile-page">Profile Page</Nav.Link> : null}
             {props.authenticated ? <Nav.Link ><div onClick={() => setGenModalShow(true)}>Logout</div></Nav.Link> : null}
-            <ModalGen handleLogOut={props.handleLogOut} show={genModalShow} onHide={() => setGenModalShow(false)} />
+            <ModalGen action={'logout'} function={props.handleLogOut} buttonText={'Logout'} show={genModalShow} onHide={() => setGenModalShow(false)} />
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -1,34 +1,32 @@
-import { Modal, Button, Form, Row, Col, FloatingLable } from 'react-bootstrap'
-import { React, useState } from 'react'
-import { BASE_URL } from '../globals'
+import react, { useState } from 'react'
+import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
 import axios from 'axios'
-function MyVerticallyCenteredModal(props) {
-  const [newReview, setNewReview] = useState({
-    user: '',
-    title: '',
+import { BASE_URL } from '../globals'
+import Client from '../services'
+
+function UpdateModal(props) {
+  const [updateReview, setUpdateReview] = useState({
     description: '',
     rating: null
   })
 
   const onSubmit = async () => {
-    const res = await axios.post(`${BASE_URL}/create-review`, newReview)
+    console.log('anything')
+    const res = await Client.put(
+      `${BASE_URL}/update-review/${props.id}`,
+      updateReview
+    )
+    console.log(res)
   }
 
-  const handleChangeTitle = (event) => {
-    setNewReview({ ...newReview, title: event.target.value })
-  }
-  const handleChangeDescription = (event) => {
-    setNewReview({ ...newReview, description: event.target.value })
+  const handleChangeDescription = (e) => {
+    setUpdateReview({ ...updateReview, description: e.target.value })
   }
 
-  const handleChangeRating = (event) => {
-    setNewReview({ ...newReview, rating: event.target.value })
+  const handleChangeRating = (e) => {
+    setUpdateReview({ ...updateReview, rating: e.target.value })
   }
-
-  const handleChangeUser = (props) => {
-    setNewReview({ ...newReview, user: `${props.user}` })
-  }
-  console.log(newReview)
+  console.log(updateReview)
   return (
     <Modal
       {...props}
@@ -42,19 +40,19 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>Create Review</h4>
+        <h4>Update Review</h4>
 
-        <Form onSubmit={onSubmit}>
+        <Form>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label column sm="2">
-              Signed in as:
+              Reviewed By:
             </Form.Label>
             <Col sm="10">
               <Form.Control
                 plaintext
                 readOnly
                 value={props.user}
-                onChange={handleChangeUser}
+                // onChange={handleChangeUser}
               />
             </Col>
           </Form.Group>
@@ -67,7 +65,9 @@ function MyVerticallyCenteredModal(props) {
               <Form.Control
                 type="input"
                 placeholder="Movie Title"
-                onChange={handleChangeTitle}
+                plaintext
+                readOnly
+                value={props.movie}
               />
             </Col>
           </Form.Group>
@@ -86,11 +86,12 @@ function MyVerticallyCenteredModal(props) {
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Label placeholder="enter Review here">
-                  Enter Review Here
+                  Update Review
                 </Form.Label>
                 <Form.Control
                   as="textarea"
                   rows={3}
+                  defaultValue={props.description}
                   onChange={handleChangeDescription}
                 />
               </Form.Group>
@@ -164,7 +165,7 @@ function MyVerticallyCenteredModal(props) {
                     type={type}
                     id={`inline-${type}-7`}
                     value={7}
-                    onChange={handleChangeRating}
+                    // onChange={handleChangeRating}
                   />
                   <Form.Check
                     inline
@@ -200,7 +201,9 @@ function MyVerticallyCenteredModal(props) {
 
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
-              <Button type="submit">Submit Review</Button>
+              <Button type="submit" onClick={onSubmit}>
+                Submit Review
+              </Button>
             </Col>
           </Form.Group>
         </Form>
@@ -212,4 +215,4 @@ function MyVerticallyCenteredModal(props) {
   )
 }
 
-export default MyVerticallyCenteredModal
+export default UpdateModal
