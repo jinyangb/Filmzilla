@@ -11,7 +11,6 @@ function ProfilePage(props) {
   const getProfileInfo = async (id) => {
     try {
       const res = await Client.get(`${BASE_URL}/myprofile/${id}`)
-      console.log('res data', res.data)
       setProfileInfo(res.data)
     } catch (error) {
       throw error
@@ -19,7 +18,6 @@ function ProfilePage(props) {
   }
 
   useEffect(() => {
-    console.log('userid', props.user.id)
     getProfileInfo(props.user.id)
   }, [props.user.id])
 
