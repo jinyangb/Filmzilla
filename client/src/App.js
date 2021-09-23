@@ -36,7 +36,7 @@ function App() {
     <div>
       <MainNavigation authenticated={authenticated} user={user} handleLogOut={handleLogOut} />
       <Switch>
-        <Route exact path="/" component={(props) => <Home {...props} setUser={setUser} toggleAuthenticated={toggleAuthenticated} authenticated={authenticated}/>} />
+        <Route exact path="/" component={(props) => <Home {...props} setUser={setUser} user={user} toggleAuthenticated={toggleAuthenticated} authenticated={authenticated}/>} />
         <Route path="/movies" exact>
           <Movies />
         </Route>
