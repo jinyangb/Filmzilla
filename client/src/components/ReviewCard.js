@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import { BASE_URL } from '../globals'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
