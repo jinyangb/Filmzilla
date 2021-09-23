@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { SignInUser } from '../../services/Auth'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -20,27 +20,23 @@ export default function SignIn(props) {
   }
 
   return (
-    <div className="signin col">
-      <h1>SIGN IN</h1>
-      <div className="card-overlay centered">
-        <Container>
-          <Form className="col" onSubmit={handleSubmit}>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Username</Form.Label>
-                <Form.Control onChange={handleChange} name="username" type="text" placeholder="example username" value={formValues.username} required/>
-              </Form.Group>
-            </div>
-            <div className="input-wrapper">
-              <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
-                <Form.Control onChange={handleChange} type="password" name="password" value={formValues.password} required/>
-              </Form.Group>
-            </div>
-            <Button type="submit" disabled={!formValues.username || !formValues.password}>Sign In</Button>
-          </Form>
-        </Container>
-      </div>
+    <div className="signin-sect">
+      <Container>
+        <h1>SIGN IN</h1>
+      </Container>
+      <Container>
+        <Form className="signin-form" onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label>Username</Form.Label>
+            <Form.Control onChange={handleChange} name="username" type="text" value={formValues.username} required/>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Password</Form.Label>
+            <Form.Control onChange={handleChange} type="password" name="password" value={formValues.password} required/>
+          </Form.Group>
+          <Button type="submit" disabled={!formValues.username || !formValues.password}>Sign In</Button>
+        </Form>
+      </Container>
     </div>
   )
 }
