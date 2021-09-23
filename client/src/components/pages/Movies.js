@@ -22,8 +22,6 @@ export default function Movie(props) {
     getMovies()
   }, [])
 
-  console.log('movies', movies)
-
   return (
     <div>
       <h2>Movies</h2>

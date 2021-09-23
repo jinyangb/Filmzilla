@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-// import axios from 'axios'
+import axios from 'axios'
 import { connect } from 'react-redux'
 import Container from 'react-bootstrap/Container'
 import ReviewCard from './ReviewCard'
