@@ -24,13 +24,13 @@ function ReviewList() {
           <h2 className="rev_head">Reviews</h2>
           {reviews.map((review) => (
             <ReviewCard
-              key={review._id}
-              id={review._id}
+              key={review.id}
+              id={review.id}
               rating={review.rating}
               description={review.description}
               request={request}
               changeIt={changeIt}
-              // del_path={'remove-review'}
+              del_path={'delete-review'}
             />
           ))}
         </Container>
