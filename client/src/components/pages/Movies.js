@@ -3,11 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from '../MovieCard'
 import Search from '../Search'
-<<<<<<< HEAD
-import Card from 'react-bootstrap/Card'
-=======
 import { Container } from 'react-bootstrap'
->>>>>>> 7d9c1ca149287e2eb8ad3bc9f5e90deb6792407a
 
 export default function Movie(props) {
   const [movies, setMovies] = useState([])
@@ -65,7 +61,7 @@ export default function Movie(props) {
       </div>
 
       <div>
-        <h2>Movies</h2>
+        {/* <h2>Movies</h2> */}
         <section>
           {movies.map((movie) => (
             <Container>
