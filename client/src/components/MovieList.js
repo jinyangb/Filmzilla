@@ -26,7 +26,7 @@ function MovieList(props) {
       <div className='movies'>
         <Container>
           <h2 className="rev_head">Movies</h2>
-          {props.movieState.movies.map((movie) => (
+          {props.movieState.movies.map(movie => (
             <MovieCard
               key={movie._id}
               id={movie._id}
