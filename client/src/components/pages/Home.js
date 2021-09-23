@@ -5,9 +5,12 @@ import Container from 'react-bootstrap/Container'
 import SignIn from './SignIn'
 import MyVerticallyCenteredModal from '../modal'
 import { Button } from 'react-bootstrap'
+import ModalGen from '../ModalGen';
 
 function HomePage(props) {
+  
   const [modalShow, setModalShow] = useState(false)
+
   return (
     <div>
       {props.authenticated ? <div className='review-btn'><Container><Button variant="primary" onClick={() => setModalShow(true)}>Create Review</Button></Container></div> : null}
