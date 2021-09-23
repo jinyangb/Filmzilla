@@ -7,7 +7,6 @@ import MovieCard from './MovieCard';
 function MovieList() {
 
   const [movies, setMovies] = useState([])
-  const [request, changeIt] = useState(false)
 
   const getMovies = async () => {
     const res = await axios.get(`${BASE_URL}/movies`)
@@ -16,7 +15,7 @@ function MovieList() {
 
   useEffect(() => {
     getMovies()
-  }, [request])
+  }, [])
 
   return (
     <div className='grid'>
@@ -26,7 +25,6 @@ function MovieList() {
           {movies.map(movie => (
             <MovieCard
               key={movie.id}
-              id={movie.id}
               name={movie.title}
               overview={movie.overview}
               genre={movie.genre}
