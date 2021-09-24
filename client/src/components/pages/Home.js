@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import ReviewList from '../ReviewList'
-import MovieList from '../MovieList'
+
 import Container from 'react-bootstrap/Container'
 import SignIn from './SignIn'
 import MyVerticallyCenteredModal from '../modal'
 import { Button } from 'react-bootstrap'
-import ModalGen from '../ModalGen'
 
 function HomePage(props) {
   const [modalShow, setModalShow] = useState(false)
@@ -32,7 +31,7 @@ function HomePage(props) {
           authenticated={props.authenticated}
         />
       )}
-      {/* {props.authenticated ? <MovieList /> : null} */}
+
       <MyVerticallyCenteredModal
         user={props.user}
         show={modalShow}

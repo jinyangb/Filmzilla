@@ -1,6 +1,6 @@
 import react, { useState } from 'react'
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import axios from 'axios'
+
 import { BASE_URL } from '../globals'
 import Client from '../services'
 
@@ -11,12 +11,10 @@ function UpdateModal(props) {
   })
 
   const onSubmit = async () => {
-    console.log('anything')
     const res = await Client.put(
       `${BASE_URL}/update-review/${props.id}`,
       updateReview
     )
-    console.log(res)
   }
 
   const handleChangeDescription = (e) => {
@@ -26,7 +24,7 @@ function UpdateModal(props) {
   const handleChangeRating = (e) => {
     setUpdateReview({ ...updateReview, rating: e.target.value })
   }
-  console.log(updateReview)
+
   return (
     <Modal
       {...props}
@@ -48,12 +46,7 @@ function UpdateModal(props) {
               Reviewed By:
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                plaintext
-                readOnly
-                value={props.user}
-                // onChange={handleChangeUser}
-              />
+              <Form.Control plaintext readOnly value={props.user} />
             </Col>
           </Form.Group>
           <br />
