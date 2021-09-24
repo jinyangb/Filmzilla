@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
 }
 
 code {
@@ -21,51 +20,43 @@ code {
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   grid-gap: 1em;
   padding: 0.5em;
-  
 }
-
-
 
 .MovieCard {
   border-radius: 6px;
-  
+
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   background-color: black;
   color: white;
-  height:auto;
+  height: auto;
   width: 100%;
 }
 
 .ReviewCard {
   border-radius: 6px;
-  
+
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
   background-color: darkslategray;
   color: white;
-  height:auto;
+  height: auto;
   width: 100%;
 }
-.ReviewCard:hover{
+.ReviewCard:hover {
   font-size: large;
-  color:white;
-  
+  color: white;
 }
-.ReviewCard:hover
-{
+.ReviewCard:hover {
   filter: brightness(30%);
 }
 
-
 .poster {
- 
   position: relative;
-  
 }
 
 .text {
