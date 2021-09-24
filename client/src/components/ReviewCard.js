@@ -17,20 +17,24 @@ function ReviewCard(props) {
   }
 
   return (
-    <div className="MovieGrid">
-      <div className="MovieCard">
-        <img src={props.poster} alt={props.movie} />
-        <h2>{props.movie}</h2>
-        <h3>Reviewed By: {props.user}</h3>
-        <p>Review: {props.description}</p>
-        <p>Rating: {props.rating}</p>
-        <Button variant="danger" onClick={() => setGenModalShow(true)}>
-          Delete
-        </Button>
-        <Button variant="primary" onClick={() => setUpdateModalShow(true)}>
-          Update Review
-        </Button>
-      </div>
+    <div>
+      <section className="MovieGrid">
+        <div className="MovieCard">
+          <img src={props.poster} alt={props.movie} />
+          <h2>{props.movie}</h2>
+          <h3>Reviewed By: {props.user}</h3>
+          <p>Review: {props.description}</p>
+          <p>Rating: {props.rating}</p>
+
+          <Button variant="danger" onClick={() => setGenModalShow(true)}>
+            Delete
+          </Button>
+          <Button variant="primary" onClick={() => setUpdateModalShow(true)}>
+            Update Review
+          </Button>
+        </div>
+      </section>
+
       <ModalGen
         action={'delete this post'}
         function={() => deletePost()}
