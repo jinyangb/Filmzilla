@@ -2,21 +2,25 @@ const router = require('express').Router()
 const controller = require('../controllers/MovieController')
 const middleware = require('../middleware')
 
-router.get('/', controller.GetMovies)
+router.get('/movies', controller.GetMovies)
+// router.get('/movie-details/:id', controller.GetMovieDetails)
 router.post(
-  '/',
-  middleware.stripToken,
-  middleware.verifyToken,
+  '/create-movie',
+  // middleware.stripToken,
+  // middleware.verifyToken,
   controller.CreateMovie
 )
+
+// router.get('/movies-details/:movie_id', controller.GetMovieDetails)
 // router.put(
-//   '/:movie_id',
-//   middleware.stripToken,
-//   middleware.verifyToken,
+//   '/update-movie/:movie_id',
+//   // middleware.stripToken,
+//   // middleware.verifyToken,
 //   controller.UpdateMovie
 // )
+
 // router.delete(
-//   '/:movie_id',
+//   '/movies/:movie_id',
 //   middleware.stripToken,
 //   middleware.verifyToken,
 //   controller.DeleteMovie

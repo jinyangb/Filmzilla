@@ -5,9 +5,71 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.review-btn {
+  margin: 15px;
+}
+.MovieGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-gap: 1em;
+  padding: 0.5em;
+  
+}
+
+
+
+.MovieCard {
+  border-radius: 6px;
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  height:auto;
+  width: 100%;
+}
+
+.ReviewCard {
+  border-radius: 6px;
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: darkslategray;
+  color: white;
+  height:auto;
+  width: 100%;
+}
+.ReviewCard:hover{
+  font-size: large;
+  color:white;
+  
+}
+.ReviewCard:hover
+{
+  filter: brightness(30%);
+}
+
+
+.poster {
+ 
+  position: relative;
+  
+}
+
+.text {
+  position: relative;
+  font-size: 1em;
+  min-width: 2px;
 }
