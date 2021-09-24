@@ -4,8 +4,9 @@ import { BASE_URL } from '../globals'
 import axios from 'axios'
 function MyVerticallyCenteredModal(props) {
   const [newReview, setNewReview] = useState({
-    user: '',
-    title: '',
+    profile: '',
+    poster: '',
+    movietitle: '',
     description: '',
     rating: null
   })
@@ -15,7 +16,7 @@ function MyVerticallyCenteredModal(props) {
   }
 
   const handleChangeTitle = (event) => {
-    setNewReview({ ...newReview, title: event.target.value })
+    setNewReview({ ...newReview, movietitle: event.target.value })
   }
   const handleChangeDescription = (event) => {
     setNewReview({ ...newReview, description: event.target.value })
@@ -25,8 +26,12 @@ function MyVerticallyCenteredModal(props) {
     setNewReview({ ...newReview, rating: event.target.value })
   }
 
-  const handleChangeUser = (props) => {
-    setNewReview({ ...newReview, user: `${props.user}` })
+  const handleChangeUser = (e) => {
+    setNewReview({ ...newReview, profile: e.target.value })
+  }
+
+  const handleChangeImage = (e) => {
+    setNewReview({ ...newReview, poster: e.target.value })
   }
   console.log(newReview)
   return (
@@ -37,9 +42,7 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Header>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Movie Title
-        </Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter"></Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <h4>Create Review</h4>
@@ -47,15 +50,10 @@ function MyVerticallyCenteredModal(props) {
         <Form onSubmit={onSubmit}>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label column sm="2">
-              Signed in as:
+              Reviewed by:
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                plaintext
-                readOnly
-                value={props.user}
-                onChange={handleChangeUser}
-              />
+              <Form.Control type="input" onChange={handleChangeUser} />
             </Col>
           </Form.Group>
           <br />
@@ -68,6 +66,19 @@ function MyVerticallyCenteredModal(props) {
                 type="input"
                 placeholder="Movie Title"
                 onChange={handleChangeTitle}
+              />
+            </Col>
+          </Form.Group>
+
+          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label column sm={2}>
+              Enter Image URL
+            </Form.Label>
+            <Col sm={10}>
+              <Form.Control
+                type="input"
+                placeholder="Enter Image URL"
+                onChange={handleChangeImage}
               />
             </Col>
           </Form.Group>
