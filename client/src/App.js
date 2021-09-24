@@ -8,7 +8,7 @@ import MainNavigation from './components/layout/MainNavigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { CheckSession } from './services/Auth'
 
-function App() {
+function App(props) {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
@@ -16,6 +16,7 @@ function App() {
     setUser(null)
     toggleAuthenticated(false)
     localStorage.clear()
+    props.history.push('/')
   }
 
   const checkToken = async () => {
