@@ -39,16 +39,23 @@ code {
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
-  background-color: darkslategray;
+  background-color: black;
   color: white;
   height:auto;
   width: 100%;
 }
 
 .ReviewCard {
- height: 90px;
- width: 600px;
- color: black;
+  border-radius: 6px;
+  
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: darkslategray;
+  color: white;
+  height:auto;
+  width: 100%;
 }
 .ReviewCard:hover{
   font-size: large;
