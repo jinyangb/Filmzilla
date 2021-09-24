@@ -21,7 +21,6 @@ code {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   padding: 10px;
-  position: relative;
 }
 
 .MovieCard {
@@ -41,12 +40,14 @@ code {
 }
 
 .poster {
+  width: 20vw;
+  height: 60vh;
   padding: 10px;
   position: relative;
 }
 
 .text {
+  width: 20vw;
+  height: 60vh;
   position: relative;
-  font-size: 1em;
-  min-width: 2px;
 }
