@@ -18,20 +18,22 @@ function ReviewCard(props) {
 
   return (
     <div>
-      <Card>
-        <Card.Body>
-          <p>Username: {props.user}</p>
-          <p>Movie: {props.movie}</p>
-          <p>Rating: {props.rating}</p>
-          <p>Review: {props.description}</p>
+      <Card size="sm" className="ReviewCard" active>
+        <Card.Img className="poster" src={props.poster} alt={props.movie} />
+        <Card.ImgOverlay>
+          <Card.Title size="lg">{props.movie}</Card.Title>
+          <Card.Text>Review:{props.description}</Card.Text>
+          <Card.Text>Rating: {props.rating}</Card.Text>
+          <Card.Text>Reviewed: By: {props.user}</Card.Text>
           <Button variant="danger" onClick={() => setGenModalShow(true)}>
             Delete
           </Button>
           <Button variant="primary" onClick={() => setUpdateModalShow(true)}>
             Update Review
           </Button>
-        </Card.Body>
+        </Card.ImgOverlay>
       </Card>
+
       <ModalGen
         action={'delete this post'}
         function={() => deletePost()}
@@ -44,8 +46,8 @@ function ReviewCard(props) {
         onHide={() => setUpdateModalShow(false)}
         description={props.description}
         id={props.id}
-        user={props.user}
-        movie={props.movie}
+        // user={props.user}
+        // movie={props.movie}
       />
     </div>
   )

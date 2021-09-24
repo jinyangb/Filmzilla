@@ -28,9 +28,9 @@ function ReviewList() {
               id={review.id}
               rating={review.rating}
               description={review.description}
-              movie={review.movies.title}
-              user={review.user.username}
-              request={request}
+              user={review.profile}
+              poster={review.poster}
+              movie={review.movietitle}
               changeIt={changeIt}
               del_path={'delete-review'}
             />
