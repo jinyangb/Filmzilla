@@ -35,15 +35,6 @@ code {
   width: 100%;
 }
 
-.PosterCard:hover {
-  font-size: large;
-  color: white;
-}
-
-.PosterCard {
-  color: black;
-}
-
 .ReviewCard {
   border-radius: 6px;
 
@@ -56,7 +47,6 @@ code {
   height: auto;
   width: 100%;
 }
-
 .ReviewCard:hover {
   font-size: large;
   color: white;
@@ -70,7 +60,7 @@ code {
 }
 
 .text {
-  width: 20vw;
-  height: 60vh;
   position: relative;
+  font-size: 1em;
+  min-width: 2px;
 }
