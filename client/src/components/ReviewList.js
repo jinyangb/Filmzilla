@@ -5,7 +5,6 @@ import Container from 'react-bootstrap/Container'
 import ReviewCard from './ReviewCard'
 
 function ReviewList() {
-  
   const [reviews, setReviews] = useState([])
   const [request, changeIt] = useState(false)
 
@@ -17,7 +16,7 @@ function ReviewList() {
   useEffect(() => {
     getReviews()
   }, [request])
-
+  console.log(reviews)
   return (
     <div className="grid">
       <div className="reviews">
@@ -29,7 +28,9 @@ function ReviewList() {
               id={review.id}
               rating={review.rating}
               description={review.description}
-              request={request}
+              user={review.profile}
+              poster={review.poster}
+              movie={review.movietitle}
               changeIt={changeIt}
               del_path={'delete-review'}
             />
@@ -40,4 +41,4 @@ function ReviewList() {
   )
 }
 
-export default ReviewList;
+export default ReviewList

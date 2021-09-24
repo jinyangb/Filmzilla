@@ -36,7 +36,7 @@ function UpdateModal(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Movie Title
+          {props.movie}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -59,7 +59,7 @@ function UpdateModal(props) {
           <br />
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
             <Form.Label column sm={2}>
-              Movie Title
+              Update Review
             </Form.Label>
             <Col sm={10}>
               <Form.Control
@@ -165,7 +165,7 @@ function UpdateModal(props) {
                     type={type}
                     id={`inline-${type}-7`}
                     value={7}
-                    // onChange={handleChangeRating}
+                    onChange={handleChangeRating}
                   />
                   <Form.Check
                     inline
@@ -202,7 +202,7 @@ function UpdateModal(props) {
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
               <Button type="submit" onClick={onSubmit}>
-                Submit Review
+                Update Review
               </Button>
             </Col>
           </Form.Group>

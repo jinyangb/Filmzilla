@@ -46,17 +46,17 @@ export default function Movie(props) {
       />
       <div>
         {/* <h2>Search Results</h2> */}
-        <section>
+        <section className="MovieGrid">
           {searchResults.length > 0}
           {searchResults.map((searchResult) => (
-            <Container>
+            <div className="MovieCard">
               <MovieCard
                 key={searchResult.id}
                 {...searchResult}
                 name={searchResult.title}
                 overview={searchResult.overview}
               />
-            </Container>
+            </div>
           ))}
         </section>
       </div>
