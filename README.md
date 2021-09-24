@@ -18,7 +18,7 @@ A movie based review application. Discuss and review your favorite movies.
 
 **_Technologies Used_**
 
-- Postgresql
+- Postgresqll
 - Express
 - React
 - Node
