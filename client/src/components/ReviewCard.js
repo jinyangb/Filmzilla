@@ -21,7 +21,7 @@ function ReviewCard(props) {
       <Card>
         <Card.Body>
           <p>Username: {props.user}</p>
-          <p>Movie: {props.movies}</p>
+          <p>Movie: {props.movie}</p>
           <p>Rating: {props.rating}</p>
           <p>Review: {props.description}</p>
           <Button variant="danger" onClick={() => setGenModalShow(true)}>
@@ -44,6 +44,8 @@ function ReviewCard(props) {
         onHide={() => setUpdateModalShow(false)}
         description={props.description}
         id={props.id}
+        user={props.user}
+        movie={props.movie}
       />
     </div>
   )
