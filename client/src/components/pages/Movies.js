@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MovieCard from '../MovieCard'
 import Search from '../Search'
-import { Container } from 'react-bootstrap'
+
 import '../../index.css'
 
 export default function Movie(props) {
@@ -45,7 +45,6 @@ export default function Movie(props) {
         value={searchQuery}
       />
       <div>
-        {/* <h2>Search Results</h2> */}
         <section className="MovieGrid">
           {searchResults.length > 0}
           {searchResults.map((searchResult) => (

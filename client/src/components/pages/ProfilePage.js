@@ -1,8 +1,8 @@
 // import axios from 'axios'
-import React, { useState, useEffect } from 'react'
-import { BASE_URL } from '../../globals'
-import { Card, Button } from 'react-bootstrap'
-import Client from '../../services'
+// import React, { useState, useEffect } from 'react'
+// import { BASE_URL } from '../../globals'
+// import { Card, Button } from 'react-bootstrap'
+// import Client from '../../services'
 
 // function ProfilePage(props) {
 //   const [getProfile, setProfileInfo] = useState([])
