@@ -4,6 +4,7 @@ import axios from 'axios'
 import MovieCard from '../MovieCard'
 import Search from '../Search'
 import { Container } from 'react-bootstrap'
+import '../../index.css'
 
 export default function Movie(props) {
   const [movies, setMovies] = useState([])
@@ -61,17 +62,13 @@ export default function Movie(props) {
       </div>
 
       <div>
-        {/* <h2>Movies</h2> */}
-        <section>
+        <section className="MovieGrid">
           {movies.map((movie) => (
-            <Container>
-              <MovieCard
-                name={movie.title}
-                backdrop_path={movie.poster_path}
-                overview={movie.overview}
-                // genre={movie.genre}
-              />
-            </Container>
+            <MovieCard
+              name={movie.title}
+              backdrop_path={movie.poster_path}
+              overview={movie.overview}
+            />
           ))}
         </section>
       </div>
