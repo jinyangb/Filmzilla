@@ -34,7 +34,7 @@ function HomePage(props) {
       )}
       {/* {props.authenticated ? <MovieList /> : null} */}
       <MyVerticallyCenteredModal
-        user={props.user.username}
+        user={props.user}
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
