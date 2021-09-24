@@ -21,6 +21,9 @@ module.exports = (sequelize, DataTypes) => {
   }
   Reviews.init(
     {
+      poster: DataTypes.STRING,
+      profile: DataTypes.STRING,
+      movietitle: DataTypes.STRING,
       description: { type: DataTypes.STRING, allowNull: false },
       rating: { type: DataTypes.STRING, allowNull: false },
       movieId: {
@@ -38,6 +41,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
+
     {
       sequelize,
       modelName: 'Reviews',

@@ -1,6 +1,6 @@
 import react, { useState } from 'react'
 import { Modal, Button, Form, Row, Col } from 'react-bootstrap'
-import axios from 'axios'
+
 import { BASE_URL } from '../globals'
 import Client from '../services'
 
@@ -11,12 +11,10 @@ function UpdateModal(props) {
   })
 
   const onSubmit = async () => {
-    console.log('anything')
     const res = await Client.put(
       `${BASE_URL}/update-review/${props.id}`,
       updateReview
     )
-    console.log(res)
   }
 
   const handleChangeDescription = (e) => {
@@ -26,7 +24,7 @@ function UpdateModal(props) {
   const handleChangeRating = (e) => {
     setUpdateReview({ ...updateReview, rating: e.target.value })
   }
-  console.log(updateReview)
+
   return (
     <Modal
       {...props}
@@ -36,7 +34,7 @@ function UpdateModal(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Movie Title
+          {props.movie}
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -48,18 +46,13 @@ function UpdateModal(props) {
               Reviewed By:
             </Form.Label>
             <Col sm="10">
-              <Form.Control
-                plaintext
-                readOnly
-                value={props.user}
-                // onChange={handleChangeUser}
-              />
+              <Form.Control plaintext readOnly value={props.user} />
             </Col>
           </Form.Group>
           <br />
           <Form.Group as={Row} className="mb-3" controlId="formHorizontalEmail">
             <Form.Label column sm={2}>
-              Movie Title
+              Movie:
             </Form.Label>
             <Col sm={10}>
               <Form.Control
@@ -165,7 +158,7 @@ function UpdateModal(props) {
                     type={type}
                     id={`inline-${type}-7`}
                     value={7}
-                    // onChange={handleChangeRating}
+                    onChange={handleChangeRating}
                   />
                   <Form.Check
                     inline
@@ -202,7 +195,7 @@ function UpdateModal(props) {
           <Form.Group as={Row} className="mb-3">
             <Col sm={{ span: 10, offset: 2 }}>
               <Button type="submit" onClick={onSubmit}>
-                Submit Review
+                Update Review
               </Button>
             </Col>
           </Form.Group>

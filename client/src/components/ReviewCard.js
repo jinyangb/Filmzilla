@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BASE_URL } from '../globals'
-import Card from 'react-bootstrap/Card'
+
 import Button from 'react-bootstrap/Button'
 import Client from '../services'
 import ModalGen from './ModalGen'
@@ -11,27 +11,29 @@ function ReviewCard(props) {
   const [updatemodalShow, setUpdateModalShow] = useState(false)
 
   const deletePost = async (e) => {
-    // e.preventDefault()
     await Client.delete(`${BASE_URL}/${props.del_path}/${props.id}`)
     props.request ? props.changeIt(false) : props.changeIt(true)
   }
 
   return (
     <div>
-      <Card>
-        <Card.Body>
-          <p>Username: {props.user}</p>
-          <p>Movie: {props.movies}</p>
-          <p>Rating: {props.rating}</p>
+      <section className="MovieGrid">
+        <div className="MovieCard">
+          <img src={props.poster} alt={props.movie} />
+          <h2>{props.movie}</h2>
+          <h3>Reviewed By: {props.user}</h3>
           <p>Review: {props.description}</p>
+          <p>Rating: {props.rating}</p>
+
           <Button variant="danger" onClick={() => setGenModalShow(true)}>
             Delete
           </Button>
           <Button variant="primary" onClick={() => setUpdateModalShow(true)}>
             Update Review
           </Button>
-        </Card.Body>
-      </Card>
+        </div>
+      </section>
+
       <ModalGen
         action={'delete this post'}
         function={() => deletePost()}
@@ -44,6 +46,8 @@ function ReviewCard(props) {
         onHide={() => setUpdateModalShow(false)}
         description={props.description}
         id={props.id}
+        user={props.user}
+        movie={props.movie}
       />
     </div>
   )
