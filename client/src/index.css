@@ -24,13 +24,7 @@ code {
   
 }
 
-/* .MovieGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  padding: 10px;
-  position: relative;
-} */
+
 
 .MovieCard {
   border-radius: 6px;
@@ -62,22 +56,16 @@ code {
   color:white;
   
 }
-.poster:hover
+.ReviewCard:hover
 {
   filter: brightness(30%);
 }
-/* .postercontainer {
-  width: 25vw;
-  height: 70vh;
-  padding: 10px;
-  position: relative;
-} */
+
 
 .poster {
-  /* padding: 10px; */
+ 
   position: relative;
-  /* height: 70vh;
-  width: 25vw; */
+  
 }
 
 .text {

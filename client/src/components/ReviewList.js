@@ -16,7 +16,7 @@ function ReviewList() {
   useEffect(() => {
     getReviews()
   }, [request])
-  console.log(reviews)
+
   return (
     <div className="grid">
       <div className="reviews">

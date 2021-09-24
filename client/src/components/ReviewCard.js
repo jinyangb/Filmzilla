@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BASE_URL } from '../globals'
-import Card from 'react-bootstrap/Card'
+
 import Button from 'react-bootstrap/Button'
 import Client from '../services'
 import ModalGen from './ModalGen'
@@ -11,7 +11,6 @@ function ReviewCard(props) {
   const [updatemodalShow, setUpdateModalShow] = useState(false)
 
   const deletePost = async (e) => {
-    // e.preventDefault()
     await Client.delete(`${BASE_URL}/${props.del_path}/${props.id}`)
     props.request ? props.changeIt(false) : props.changeIt(true)
   }
